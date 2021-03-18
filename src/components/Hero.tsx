@@ -2,8 +2,10 @@ import { Box, BoxProps, Flex } from "@chakra-ui/layout"
 import { useEffect, useRef, useState } from "react"
 
 import { TriangleUpIcon } from "@chakra-ui/icons"
+import { useRouter } from "next/dist/client/router"
 
 export const Hero = ({}: BoxProps) => {
+  const router = useRouter()
   const contentRef = useRef<HTMLDivElement>(null)
   const [opacity, setOpacity] = useState(1)
 
@@ -24,7 +26,7 @@ export const Hero = ({}: BoxProps) => {
       bgSize="cover"
       bgPos="top"
       bgAttachment="fixed"
-      bgImage="url('/img/hero.png')"
+      bgImage={`url('${router.basePath}/img/hero.png')`}
     >
       <Flex
         color="white"
