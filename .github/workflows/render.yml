@@ -32,7 +32,7 @@ jobs:
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 
       - name: Build Project
-        run: yarn && yarn build
+        run: yarn && yarn export
 
       - name: Rename
         run: |
